@@ -19,4 +19,5 @@ services:
             - GETH_VERSION
             - DEBUG_LEVEL
             - NETWORK
+            - GETH_ANCIENT_CHAINDATA_DIR
         stop_grace_period: 3m

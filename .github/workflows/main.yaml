@@ -21,9 +21,6 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
     
-    - name: Create validator keys folder
-      run: mkdir validator_keys 
-             
     # Generate zip file
     - name: Generate deployment package
       run: zip -r deploy.zip . -x '*.git*'
