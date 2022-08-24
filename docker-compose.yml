@@ -1,0 +1,22 @@
+version: "3.0"
+
+services:
+    geth:
+        image: ethereum/client-go:${GETH_VERSION}
+        entrypoint: /bin/sh
+        volumes:
+            - /home/ec2-user/geth-data:/root/.ethereum
+            - ${GETH_ANCIENT_CHAINDATA_DIR}:/root/ancient-data
+            - ./scripts:/root/scripts:ro
+        ports:
+            - 30303:30303/tcp
+            - 30303:30303/udp
+        env_file: 
+            - default.env
+        command: /root/scripts/start-geth.sh
+        restart: on-failure
+        environment:
+            - GETH_VERSION
+            - DEBUG_LEVEL
+            - NETWORK
+        stop_grace_period: 3m

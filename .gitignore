@@ -1,0 +1,6 @@
+network/
+secrets/
+geth-data/
+.env
+docker-compose.override.yaml
+docker-compose.override.yml
