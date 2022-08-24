@@ -7,7 +7,7 @@ name: CI
 on:
   push:
     branches:
-      - mainnet
+      - goerli
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -35,9 +35,9 @@ jobs:
         aws_access_key: ${{secrets.AWS_ACCESS_KEY}}
         aws_secret_key: ${{secrets.AWS_SECRET_KEY}}
         application_name: ${{secrets.APP_NAME}}
-        environment_name: ${{secrets.APP_NAME}}-mainnet
+        environment_name: ${{secrets.APP_NAME}}-goerli
         region: us-east-1
-        version_label: "mainnet-${{github.sha}}"
+        version_label: "goerli-${{github.sha}}"
         deployment_package: deploy.zip
 
     - name: Deployed!
